@@ -1,0 +1,78 @@
+.no-border {
+  border: 0;
+  outline: 0;
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.radio-group label {
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.7s ease-in;
+}
+
+.radio-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.radio-group input:checked + label {
+  background-color: rgb(34, 161, 161);
+  transition: background-color 0.4s ease-in-out;
+}
+
+.comment-card {
+  position: relative;
+  padding: 20px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: white;
+}
+.comment-rate {
+  position: absolute;
+  background-color: aqua;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  left: -20px;
+}
+.comment-control {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+.comment-delete , .comment-edit{
+    cursor: pointer;
+    font-size: 15px;
+}
+.comment-delete:hover , .comment-edit:hover {
+    color: red;
+}
+.comment-content {
+    padding: 25px;
+    font-size: 17px;
+}
