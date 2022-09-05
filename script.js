@@ -8,11 +8,12 @@ tempcommment = document.querySelector('template');
 review_num = document.querySelector('.review-num');
 comments = [...document.querySelectorAll('.comment-card')];
 avgrate = document.querySelector('.review-rate');
+deleteBtns = document.querySelectorAll('.comment-delete');
 
-review_num.innerText = `${comments.length} Reviews`
+const getReviews = () => { review_num.innerText = `${comments.length} Reviews` ;}
 
 const avg = () => { 
-    avgrate.innerText = `Average Rating: ${(comments.map((c) => {
+    avgrate.innerText = `Average Rating:  ${comments.length==0 ? 0 :(comments.map((c) => {
     return +c.querySelector('.comment-rate').innerText}).reduce((r , acc)=>{return acc += r;}, 0)/comments.length).toFixed(1)}`}
 
 avg();
@@ -55,8 +56,18 @@ commentBtn.addEventListener('click' , (e)=>{
     inputvalue = '';
     Commentinput.value = '';
     comments = [...document.querySelectorAll('.comment-card')]
-    review_num.innerText = `${comments.length} Reviews`
+    getReviews();
     avg();
     commentBtn.disabled = true;
 })
+deleteBtns.forEach((dB)=>{
 
+    dB.addEventListener('click' , (e)=>{
+        btn = e.target ;
+        document.querySelector('.main-comment').removeChild(btn.closest('.comment-card'));
+        comments = [...document.querySelectorAll('.comment-card')];
+        getReviews();
+        avg();
+    })
+
+})
