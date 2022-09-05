@@ -57,22 +57,25 @@
   left: -20px;
 }
 .comment-control {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: space-evenly;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-evenly;
 }
-.comment-delete , .comment-edit{
-    cursor: pointer;
-    font-size: 15px;
+.comment-delete,
+.comment-edit {
+  cursor: pointer;
+  font-size: 15px;
 }
-.comment-delete:hover , .comment-edit:hover {
-    color: red;
+.comment-delete:hover,
+.comment-edit:hover {
+  color: red;
+  transition: color 0.5s ease-in-out;
 }
 .comment-content {
-    padding: 25px;
-    font-size: 17px;
+  padding: 25px;
+  font-size: 17px;
 }

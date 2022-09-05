@@ -19,11 +19,11 @@ avg();
 Commentinput.addEventListener('input' , (e)=>{
     inlen = e.target.value.length;
     inputvalue = e.target.value;
-    if(inlen < 10  ){
+    if(inlen < 2  ){
         errormessage.classList.remove('d-none')
         errormessage.classList.add('d-block')
         commentBtn.disabled = true ;
-    }else if (inlen > 10 ){
+    }else if (inlen > 2 ){
         errormessage.classList.remove('d-block')
         errormessage.classList.add('d-none')
         commentBtn.disabled = false ;
@@ -51,13 +51,12 @@ commentBtn.addEventListener('click' , (e)=>{
         <div class="comment-content">${inputvalue}</div>
         `;
 
-    document.querySelector('.main-body').appendChild(comment_card);
+    document.querySelector('.main-comment').prepend(comment_card);
     inputvalue = '';
     Commentinput.value = '';
     comments = [...document.querySelectorAll('.comment-card')]
     review_num.innerText = `${comments.length} Reviews`
-    
     avg();
-
+    commentBtn.disabled = true;
 })
 
