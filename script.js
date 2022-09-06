@@ -51,6 +51,8 @@ const commentAdd = (e)=>{
 }
 const commentEdit = (e , comment)=>{
     e.preventDefault();
+    if(inputvalue.length > 2 )
+    {
     editingcomment.querySelector('.comment-content').innerText = inputvalue;
     editingcomment.querySelector('.comment-rate').innerText = rate;
     getReviews();
@@ -62,6 +64,11 @@ const commentEdit = (e , comment)=>{
     editingcomment = null;
     radiobtns[9].checked = true;
     commentBtn.disabled = true;
+
+    }else {
+        errormessage.classList.remove('d-none')
+        errormessage.classList.add('d-block')
+    }
 }
 const editing = (e)=>{
     let btn = e.target ;
