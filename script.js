@@ -60,6 +60,7 @@ const commentEdit = (e , comment)=>{
     inputvalue = '';
     Commentinput.value = '';
     editingcomment = null;
+    radiobtns[9].checked = true;
     commentBtn.disabled = true;
 }
 const editing = (e)=>{

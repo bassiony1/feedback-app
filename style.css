@@ -79,3 +79,9 @@
   padding: 25px;
   font-size: 17px;
 }
+textarea {
+  resize: none;
+}
+textarea::placeholder {
+  text-align: center;
+}
